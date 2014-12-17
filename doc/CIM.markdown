@@ -70,7 +70,14 @@ $address2->faxNumber = "555-523-5556";
 $customerProfile->shipToList[] = $address2;
 ```
 
-Next, create an AuthorizeNetCIM object:
+Next, create an AuthorizeNetCIM object by first specifying your authentication details:
+
+```PHP
+define("AUTHORIZENET_API_LOGIN_ID", "YOURLOGIN");
+define("AUTHORIZENET_TRANSACTION_KEY", "YOURKEY");
+```
+
+Then creating the object
 
 ```PHP
 $request = new AuthorizeNetCIM;
