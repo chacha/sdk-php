@@ -7,6 +7,18 @@ Basic Overview
 The AuthorizeNetCIM class creates a request object for submitting transactions
 to the Authorize.Net CIM API.
 
+Authentication
+--------------
+
+Before starting, make sure you have specified your AuthorizeNet API Login ID and Transaction Key. 
+
+```PHP
+define("AUTHORIZENET_API_LOGIN_ID", "YOURLOGIN");
+define("AUTHORIZENET_TRANSACTION_KEY", "YOURKEY");
+```
+
+The rest of the example assume that you've already defined these.
+
 
 Creating a Customer Profile
 ---------------------------
@@ -70,14 +82,7 @@ $address2->faxNumber = "555-523-5556";
 $customerProfile->shipToList[] = $address2;
 ```
 
-Next, create an AuthorizeNetCIM object by first specifying your authentication details:
-
-```PHP
-define("AUTHORIZENET_API_LOGIN_ID", "YOURLOGIN");
-define("AUTHORIZENET_TRANSACTION_KEY", "YOURKEY");
-```
-
-Then creating the object
+Next, create an AuthorizeNetCIM object by creating the object:
 
 ```PHP
 $request = new AuthorizeNetCIM;
